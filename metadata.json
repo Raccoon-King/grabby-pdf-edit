@@ -1,0 +1,5 @@
+{
+  "name": "React PDF Editor",
+  "description": "A client-side PDF editor built with React, TypeScript, and Tailwind CSS. Allows users to upload, view, delete pages, add text, and download modified PDFs.",
+  "requestFramePermissions": []
+}
