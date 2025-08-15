@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# React PDF Editor
 
-# Run and deploy your AI Studio app
+This project is a client-side PDF editor built with **React**, **TypeScript**, and **Tailwind CSS**. It allows users to:
 
-This contains everything you need to run your app locally.
+- Upload a PDF file via drag-and-drop or file picker.
+- View, reorder, and delete pages.
+- Add, move, resize, and remove text or redaction boxes.
+- Download a new PDF containing all modifications.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1KDiuS0McvONc-nI-lxkOZQin5uwZRUgP
+A lightweight Go server is included to serve the production build and expose a `/healthz` endpoint for uptime checks.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
+## Development
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Production
+
+1. Build the frontend assets:
+   ```bash
+   npm run build
+   ```
+2. Start the Go server (serves files from `dist/`):
+   ```bash
+   go run ./server
+   ```
+   Use the `PORT` environment variable to change the listening port and `STATIC_DIR` to override the directory served.
+
+The server exposes a health endpoint at `/healthz` which returns `200 OK` when the service is ready.
+
+## License
+
+MIT
+
